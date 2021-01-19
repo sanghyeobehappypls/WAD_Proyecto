@@ -854,7 +854,7 @@ public class UsuarioControlador {
         
         ServletOutputStream sos = response.getOutputStream();
         //File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaUsuarios.jasper").getPath().replace("%20", " "));
-        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaPrestamos.jasper"));
+        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaUsuarios.jasper"));
         byte[] bytes = JasperRunManager.runReportToPdf(reporte.getPath(), null, daoUsuario.conexion());
         response.setContentType("application/pdf");
         response.setContentLength(bytes.length);
@@ -876,7 +876,7 @@ public class UsuarioControlador {
         
         ServletOutputStream sos = response.getOutputStream();
         //File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaLibros.jasper").getPath().replace("%20", " "));
-        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaPrestamos.jasper"));
+        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaLibros.jasper"));
         byte[] bytes = JasperRunManager.runReportToPdf(reporte.getPath(), null, daoLibro.conexion());
         response.setContentType("application/pdf");
         response.setContentLength(bytes.length);
@@ -898,7 +898,7 @@ public class UsuarioControlador {
         
         ServletOutputStream sos = response.getOutputStream();
         //File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaAutores.jasper").getPath().replace("%20", " "));
-        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaPrestamos.jasper"));
+        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaAutores.jasper"));
         byte[] bytes = JasperRunManager.runReportToPdf(reporte.getPath(), null, daoAutor.conexion());
         response.setContentType("application/pdf");
         response.setContentLength(bytes.length);
@@ -920,7 +920,7 @@ public class UsuarioControlador {
         
         ServletOutputStream sos = response.getOutputStream();
         //File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaEditoriales.jasper").getPath().replace("%20", " "));
-        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaPrestamos.jasper"));
+        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaEditoriales.jasper"));
         byte[] bytes = JasperRunManager.runReportToPdf(reporte.getPath(), null, daoEditorial.conexion());
         response.setContentType("application/pdf");
         response.setContentLength(bytes.length);
@@ -1051,6 +1051,9 @@ public class UsuarioControlador {
         return pie3d;
     }
 }
+
+
+
 
 
 
