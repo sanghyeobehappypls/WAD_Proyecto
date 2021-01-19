@@ -853,7 +853,8 @@ public class UsuarioControlador {
         }
         
         ServletOutputStream sos = response.getOutputStream();
-        File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaUsuarios.jasper").getPath().replace("%20", " "));
+        //File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaUsuarios.jasper").getPath().replace("%20", " "));
+        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaPrestamos.jasper"));
         byte[] bytes = JasperRunManager.runReportToPdf(reporte.getPath(), null, daoUsuario.conexion());
         response.setContentType("application/pdf");
         response.setContentLength(bytes.length);
@@ -874,7 +875,8 @@ public class UsuarioControlador {
         }
         
         ServletOutputStream sos = response.getOutputStream();
-        File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaLibros.jasper").getPath().replace("%20", " "));
+        //File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaLibros.jasper").getPath().replace("%20", " "));
+        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaPrestamos.jasper"));
         byte[] bytes = JasperRunManager.runReportToPdf(reporte.getPath(), null, daoLibro.conexion());
         response.setContentType("application/pdf");
         response.setContentLength(bytes.length);
@@ -895,7 +897,8 @@ public class UsuarioControlador {
         }
         
         ServletOutputStream sos = response.getOutputStream();
-        File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaAutores.jasper").getPath().replace("%20", " "));
+        //File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaAutores.jasper").getPath().replace("%20", " "));
+        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaPrestamos.jasper"));
         byte[] bytes = JasperRunManager.runReportToPdf(reporte.getPath(), null, daoAutor.conexion());
         response.setContentType("application/pdf");
         response.setContentLength(bytes.length);
@@ -916,7 +919,8 @@ public class UsuarioControlador {
         }
         
         ServletOutputStream sos = response.getOutputStream();
-        File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaEditoriales.jasper").getPath().replace("%20", " "));
+        //File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaEditoriales.jasper").getPath().replace("%20", " "));
+        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaPrestamos.jasper"));
         byte[] bytes = JasperRunManager.runReportToPdf(reporte.getPath(), null, daoEditorial.conexion());
         response.setContentType("application/pdf");
         response.setContentLength(bytes.length);
@@ -937,7 +941,8 @@ public class UsuarioControlador {
         }
         
         ServletOutputStream sos = response.getOutputStream();
-        File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaPrestamos.jasper").getPath().replace("%20", " "));
+        //File reporte = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../reportes/listaPrestamos.jasper").getPath().replace("%20", " "));
+        File reporte = new File(request.getServletContext().getRealPath("/reportes/listaPrestamos.jasper"));
         byte[] bytes = JasperRunManager.runReportToPdf(reporte.getPath(), null, daoPrestamo.conexion());
         response.setContentType("application/pdf");
         response.setContentLength(bytes.length);
@@ -962,7 +967,8 @@ public class UsuarioControlador {
         }
         
         JFreeChart grafica = ChartFactory.createPieChart3D("Libros por Autor", getGraficaLibrosXAutor(), true, true, Locale.getDefault());
-        String archivo = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../").getPath().replace("%20", " ")).getPath() + "\\graficaLXA.png";
+        //String archivo = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../").getPath().replace("%20", " ")).getPath() + "\\graficaLXA.png";
+        String archivo = request.getServletContext().getRealPath("/graficaLXA.png");
         ChartUtils.saveChartAsPNG(new File(archivo), grafica, 500, 500);
 
         mav.addObject("tipo", tipoUsuario);
@@ -978,7 +984,8 @@ public class UsuarioControlador {
         }
         
         JFreeChart grafica = ChartFactory.createPieChart3D("Libros por Editorial", getGraficaLibrosXEditorial(), true, true, Locale.getDefault());
-        String archivo = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../").getPath().replace("%20", " ")).getPath() + "\\graficaLXE.png";
+        //String archivo = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../").getPath().replace("%20", " ")).getPath() + "\\graficaLXE.png";
+        String archivo = request.getServletContext().getRealPath("/graficaLXE.png");
         ChartUtils.saveChartAsPNG(new File(archivo), grafica, 500, 500);
 
         mav.addObject("tipo", tipoUsuario);
@@ -994,7 +1001,8 @@ public class UsuarioControlador {
         }
         
         JFreeChart grafica = ChartFactory.createPieChart3D("Libros por Género", getGraficaLibrosXGenero(), true, true, Locale.getDefault());
-        String archivo = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../").getPath().replace("%20", " ")).getPath() + "\\graficaLXG.png";
+        //String archivo = new File(getClass().getProtectionDomain().getClassLoader().getResource("../../").getPath().replace("%20", " ")).getPath() + "\\graficaLXG.png";
+        String archivo = request.getServletContext().getRealPath("/graficaLXG.png");
         ChartUtils.saveChartAsPNG(new File(archivo), grafica, 500, 500);
         
         mav.addObject("tipo", tipoUsuario);
@@ -1043,6 +1051,11 @@ public class UsuarioControlador {
         return pie3d;
     }
 }
+
+
+
+
+
 
 
 
