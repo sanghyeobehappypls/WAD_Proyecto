@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">usuarioControlador</prop>
+                
+                <prop key="login.htm">usuarioControlador</prop>
+                <prop key="logout.htm">usuarioControlador</prop>
+                <prop key="listaUsuarios.htm">usuarioControlador</prop>
+                <prop key="mostrarUsuario.htm">usuarioControlador</prop>
+                <prop key="registrarUsuario.htm">usuarioControlador</prop>
+                <prop key="actualizarUsuario.htm">usuarioControlador</prop>
+                <prop key="eliminarUsuario.htm">usuarioControlador</prop>
+                
+                <prop key="listaLibros.htm">usuarioControlador</prop>
+                <prop key="mostrarLibro.htm">usuarioControlador</prop>
+                <prop key="registrarLibro.htm">usuarioControlador</prop>
+                <prop key="actualizarLibro.htm">usuarioControlador</prop>
+                <prop key="eliminarLibro.htm">usuarioControlador</prop>
+                
+                <prop key="listaAutores.htm">usuarioControlador</prop>
+                <prop key="mostrarAutor.htm">usuarioControlador</prop>
+                <prop key="registrarAutor.htm">usuarioControlador</prop>
+                <prop key="actualizarAutor.htm">usuarioControlador</prop>
+                <prop key="eliminarAutor.htm">usuarioControlador</prop>
+                
+                <prop key="listaEditoriales.htm">usuarioControlador</prop>
+                <prop key="mostrarEditorial.htm">usuarioControlador</prop>
+                <prop key="registrarEditorial.htm">usuarioControlador</prop>
+                <prop key="actualizarEditorial.htm">usuarioControlador</prop>
+                <prop key="eliminarEditorial.htm">usuarioControlador</prop>
+                
+                <prop key="listaPrestamos.htm">usuarioControlador</prop>
+                <prop key="mostrarPrestamo.htm">usuarioControlador</prop>
+                <prop key="registrarPrestamo.htm">usuarioControlador</prop>
+                <prop key="actualizarPrestamo.htm">usuarioControlador</prop>
+                <prop key="eliminarPrestamo.htm">usuarioControlador</prop>
+                
+                <prop key="reporteListaUsuarios.htm">usuarioControlador</prop>
+                <prop key="reporteListaAutores.htm">usuarioControlador</prop>
+                <prop key="reporteListaEditoriales.htm">usuarioControlador</prop>
+                <prop key="reporteListaLibros.htm">usuarioControlador</prop>
+                <prop key="reporteListaPrestamos.htm">usuarioControlador</prop>
+                
+                <prop key="graficaLibrosXAutor.htm">usuarioControlador</prop>
+                <prop key="graficaLibrosXGenero.htm">usuarioControlador</prop>
+                <prop key="graficaLibrosXEditorial.htm">usuarioControlador</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+    
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+    <!--
+    The index controller.
+    -->
+    
+    <bean name="usuarioControlador" class="com.ipn.mx.controlador.web.UsuarioControlador" />
+
+</beans>
