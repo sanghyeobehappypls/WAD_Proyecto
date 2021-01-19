@@ -133,7 +133,7 @@ public class UsuarioControlador {
         email.enviarCorreo(destinatario, asunto, texto);
         
         
-        Files.copy(ayuda.getArchivo().getInputStream(), new File(getClass().getProtectionDomain().getClassLoader().getResource("../../").getPath().replace("%20", " "), ayuda.getArchivo().getOriginalFilename()).getAbsoluteFile().toPath(), REPLACE_EXISTING);
+        Files.copy(ayuda.getArchivo().getInputStream(), new File(request.getServletContext().getRealPath(""), ayuda.getArchivo().getOriginalFilename()).getAbsoluteFile().toPath(), REPLACE_EXISTING);
         
         //Esperar 1.5 seg para mostrar mensaje
         Thread.sleep(1500);
@@ -181,7 +181,7 @@ public class UsuarioControlador {
         String texto = "La actualización del usuario \"" + this.usuario.getEntidad().getNombreUsuario() + "\" con correo " + this.usuario.getEntidad().getEmail() + " ha sido satisfactoria";
         //email.enviarCorreo(destinatario, asunto, texto);
         
-        Files.copy(ayuda.getArchivo().getInputStream(), new File(getClass().getProtectionDomain().getClassLoader().getResource("../../").getPath().replace("%20", " "), ayuda.getArchivo().getOriginalFilename()).getAbsoluteFile().toPath(), REPLACE_EXISTING);
+        Files.copy(ayuda.getArchivo().getInputStream(), new File(request.getServletContext().getRealPath(""), ayuda.getArchivo().getOriginalFilename()).getAbsoluteFile().toPath(), REPLACE_EXISTING);
         
         //Esperar 1.5 seg para mostrar mensaje
         Thread.sleep(1500);
@@ -1051,6 +1051,8 @@ public class UsuarioControlador {
         return pie3d;
     }
 }
+
+
 
 
 
