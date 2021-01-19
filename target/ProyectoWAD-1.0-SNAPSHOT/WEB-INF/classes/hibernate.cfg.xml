@@ -5,11 +5,16 @@
     <session-factory>
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <!-- JDBC Database connection settings postgres local -->
-        <property name="connection.url">
+	<property name="connection.url">
+            jdbc:postgresql://ec2-54-158-1-189.compute-1.amazonaws.com:5432/d5oa9qcp2dl4a?sslmode=require
+        </property>
+        <property name="connection.username">inenzucpfwnazj</property>
+        <property name="connection.password">b4b6af3f8d133ea0121f6eba3e757e1c3b730c4334b13264e3ed4e38f2e1cad9</property>
+        <!--<property name="connection.url">
             jdbc:postgresql://localhost:5432/Proyecto
         </property>
         <property name="connection.username">postgres</property>
-        <property name="connection.password">root</property>
+        <property name="connection.password">root</property>-->
         
         <!-- JDBC connection pool settings ... using built-in test pool -->
         <property name="connection.pool_size">1</property>
