@@ -94,12 +94,7 @@
                                         <nav class="navbar text-right bg-warning"></nav>
                                         <nav class="navbar text-right bg-warning"></nav>
                                         <nav class="navbar text-right bg-warning">
-                                                <c:if test="${tipo == ''}">
                                                 <a class="btn btn-primary navbar-brand text-light" href="login.htm">Iniciar sesión</a>
-                                                </c:if>
-                                                <c:if test="${tipo != ''}">
-                                                <a class="btn btn-primary navbar-brand text-light" href="logout.htm">Cerrar sesión</a>
-                                                </c:if>
                                         </nav>
                                 </nav>
                         </div>
