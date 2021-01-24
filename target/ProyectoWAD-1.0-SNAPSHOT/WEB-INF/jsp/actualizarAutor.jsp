@@ -109,7 +109,7 @@
 
                         <div class="card">
                                 <div class="card-header bg-primary">
-                                        <h1 class='text-center font-weight-bolder text-light'>Actualizar usuario</h1>
+                                        <h1 class='text-center font-weight-bolder text-light'>Actualizar autor</h1>
                                 </div>
                                 <div class="card-body col-md-12 bg-warning">
                                 <div class='row justify-content-center'>
@@ -164,7 +164,7 @@
                                                                                                                 </button>
                                                                                                         </div>
                                                                                                         <div class="p-2 col-xl-6">
-                                                                                                                <a href ='listaUsuarios.htm' class='btn btn-lg btn-block btn-outline-danger'>Regresar <i class="fas fa-undo"></i></a>
+                                                                                                                <a href ='listaAutores.htm' class='btn btn-lg btn-block btn-outline-danger'>Regresar <i class="fas fa-undo"></i></a>
                                                                                                         </div>
 
                                                                                                 </div>
